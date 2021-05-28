@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html>
+
+<head>
+
+  <!--jquery-->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+</head>
+
+<body>
+</body>
+
+
+<script>
+//깃에서 데이터 불러오기
+
+  jQuery.ajax({
+    url: "https://raw.githubusercontent.com/jungsu309/2021teampj/master/data/train.csv",
+    type: 'get',
+    dataType: 'text',
+    success: function(data) {
+        let lines = data.split('\n');
+        let fields = lines[0].split(',');
+        
+        let output = [];
+        
+        for(let i = 1; i < lines.length; i++){
+           let current = lines[i].split(',');
+           let doc = {};
+           for(let j = 0; j < fields.length; j++){
+               doc[fields[j]] = current[j];
+           }
+           output.push(doc);
+        }       
+        
+        console.log(output);
+    },
+    error: function(jqXHR, textStatus, errorThrow){
+        console.log(textStatus);
+    }
+});
+
+</script>
+</html>
