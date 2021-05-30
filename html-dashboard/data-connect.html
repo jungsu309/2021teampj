@@ -6,10 +6,27 @@
 
   <!--jquery-->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <!-- d3.js -->
+  <script src="https://d3js.org/d3.v4.js"></script>
 
 </head>
 
 <body>
+
+  <!--배치를 가로로 3등분하게끔 해서 배치하는 코드임 이것은 배치 한 대로 조정해야함.-->
+  <div>
+    <div style=" float: left; width: 33%;">
+      <canvas id="" style="width:20vw; height:40vh "></canvas>
+    </div>
+
+    <div style=" float: left; width: 33%;">
+      <canvas id="" style="width:20vw; height:40vh "></canvas>
+    </div>
+
+    <div style=" float: left; width: 33%;">
+      <canvas id="" style="width:20vw; height:40vh "></canvas>
+    </div>
+  </div> 
 </body>
 
 
@@ -40,7 +57,8 @@
     error: function(jqXHR, textStatus, errorThrow){
         console.log(textStatus);
     }
-});
+  });
+  
 
 </script>
 </html>
